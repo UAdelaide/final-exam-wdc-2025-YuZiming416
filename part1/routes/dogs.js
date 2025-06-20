@@ -10,5 +10,7 @@ router.get('/', async (req, res) => {
             join Users u on d.owner_id = u.user_id
             `);
             res.json(rows);
-    } catch (err) {}
+    } catch (err) {
+        res.status(500).json({ error: 'Da'})
+    }
 })
