@@ -4,6 +4,8 @@ const db = require('../db');
 
 router.get('/summary', async (req, res) => {
     try {
-        const[rows] = await
+        const[rows] = await db.query(`
+            select
+            `)
     }
 })
