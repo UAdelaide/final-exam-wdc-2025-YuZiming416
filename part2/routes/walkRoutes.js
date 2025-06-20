@@ -66,7 +66,7 @@ router.get('/owner/:ownerId', async (req, res) => {
     const{rows} = await db.query(`
       select we.*, d.name as dog_name, d.size
       from WalkRequests wr
-      joinDogs`)
+      join Dogs d on wr.dog_id = d.dog_id`)
   }
 })
 
