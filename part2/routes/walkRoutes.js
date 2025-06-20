@@ -69,7 +69,9 @@ router.get('/owner/:ownerId', async (req, res) => {
       join Dogs d on wr.dog_id = d.dog_id
       where d.owner_id = ?
       order by wr.requested_time DESC
-      `)
+      `, [ownerId]);
+
+      res
   }
 })
 
