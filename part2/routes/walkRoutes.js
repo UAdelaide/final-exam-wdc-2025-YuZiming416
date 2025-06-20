@@ -71,8 +71,8 @@ router.get('/owner/:ownerId', async (req, res) => {
       order by wr.requested_time DESC
       `, [ownerId]);
 
-      res
-  }
+      res.json(rows);
+  } catch (error)
 })
 
 module.exports = router;
