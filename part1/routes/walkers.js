@@ -21,5 +21,7 @@ router.get('/summary', async (req, res) => {
             group by u.user_id
             `);
             res.json(rows);
+    } catch (err) {
+       res.status(500).json({ error: 'Database error', details: err.message });
     }
 })
