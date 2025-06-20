@@ -8,6 +8,7 @@ router.get('/summary', async (req, res) => {
             select
             u.username as walker_username,
             count(r.rating_id) as total_ratings,
-            round(avg(r.rating))`)
+            round(avg(r.rating), 1) as average_rating,
+            ()`)
     }
 })
