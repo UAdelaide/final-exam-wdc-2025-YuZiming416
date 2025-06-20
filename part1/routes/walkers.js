@@ -16,6 +16,6 @@ router.get('/summary', async (req, res) => {
             where wr.status = 'completed' and wa.walker_id = u.user_id
             ) as completed_walks
             from Users u
-            left join Walk `)
+            left join WalkRatings r on u.user_id = r. `)
     }
 })
