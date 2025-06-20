@@ -1,17 +1,8 @@
-    body {
-      background-color: yellow;
-      font-family: Comic Sans MS;
-      font-size: 24px;
-      color: red;
-    }
-    .dog-img {
-      width: 100%;
-      height: auto;
-    }
-    button {
-      font-size: 20px;
-      background-color: purple;
-      color: white;
-      padding: 20px;
-      margin-top: 50px;
-    }
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
