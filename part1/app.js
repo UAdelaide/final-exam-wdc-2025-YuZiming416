@@ -21,7 +21,6 @@ let db;
 
 (async () => {
   try {
-    // eslint-disable-next-line no-undef
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
