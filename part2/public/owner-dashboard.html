@@ -86,8 +86,9 @@
             const res = await fetch('/api/walks/owner/${ownerId}');
             walks.value = await res.json();
             console.log('-> fetched walks:', data);
-            walks.value
+            walks.value = data;
           } catch (err) {
+            
             error.value = 'Failed to load walk requests';
           }
         }
