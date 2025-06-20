@@ -8,6 +8,8 @@ router.get('/', async (req, res) => {
             select d.name as dog_name, d.size, u.username as owner_username
             from Dogs d
             join Users u on d.owner_id = u.user_id
-            `)
+            `);
+            res.json(rows);
+            
     }
 })
