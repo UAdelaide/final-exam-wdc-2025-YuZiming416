@@ -9,4 +9,4 @@ const pool = mysql.creatPool({
     connectionLimit: 10
 });
 
-module.exports = PerformanceObserverEntryList;
+module.exports = pool;
