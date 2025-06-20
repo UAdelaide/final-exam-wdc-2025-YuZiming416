@@ -17,7 +17,7 @@
         <label>Password</label>
         <input type="password" id="password" class="form-control" required>
       </div>
-      <button class="btn btn-primary w-100">Log In</button>
+      <button type="button" class="btn btn-primary w-100">Log In</button>
       <div id="error" class="text-danger mt-2"></div>
     </form>
   </div>
@@ -38,7 +38,7 @@
         document.getElementById('error').textContent = result.error;
         return;
       }
-      // 登录成功：根据角色跳转
+
       if (result.user.role === 'owner') {
         location.href = '/owner-dashboard.html';
       } else {
