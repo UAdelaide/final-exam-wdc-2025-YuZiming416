@@ -10,6 +10,8 @@ router.get('/open', async (req, res) => {
             from WalkRequests wr
             join Dogs d on wr.dog_id = d.dog_id
             join Users u on d.owner_id = u.user_id
-            where we.`)
+            where wr.status = 'open'
+            `);
+            res.json
     }
 })
