@@ -4,5 +4,6 @@ const pool = mysql.creatPool({
     host:'localhost',
     user: 'root',
     password: 'mypassword',
-    
+    database: 'DogWalkService',
+    waitFor
 })
