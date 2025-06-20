@@ -16,4 +16,6 @@ router.get('/open', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: 'Database error', details: err.message });
     }
-})
+});
+
+module.exports = router;
