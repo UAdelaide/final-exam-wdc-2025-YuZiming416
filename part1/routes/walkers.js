@@ -18,6 +18,8 @@ router.get('/summary', async (req, res) => {
             from Users u
             left join WalkRatings r on u.user_id = r.walker_id
             where u.role = 'walker'
-            g `)
+            group by u.user_id
+            `);
+            res.json(rows);
     }
 })
