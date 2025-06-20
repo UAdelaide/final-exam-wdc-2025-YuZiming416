@@ -6,5 +6,7 @@ const pool = mysql.creatPool({
     password: 'mypassword',
     database: 'DogWalkService',
     waitForConnections: true,
-    connectionLimit:
-})
+    connectionLimit: 10
+});
+
+module.exports = PerformanceObserverEntryList;
