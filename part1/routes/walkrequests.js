@@ -12,6 +12,8 @@ router.get('/open', async (req, res) => {
             join Users u on d.owner_id = u.user_id
             where wr.status = 'open'
             `);
-            res.json
+            res.json(rows);
+    } catch (err) {
+        
     }
 })
