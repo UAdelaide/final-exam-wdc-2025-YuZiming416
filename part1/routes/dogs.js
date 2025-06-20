@@ -15,4 +15,4 @@ router.get('/', async (req, res) => {
     }
 });
 
-m
+module.exports = router;
