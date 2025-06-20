@@ -61,7 +61,7 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-router.get('/owner/:ownerId', async (req, res) => {
+router.get('/owner', async (req, res) => {
   const ownerId = req.params.ownerId;
 
   try{
