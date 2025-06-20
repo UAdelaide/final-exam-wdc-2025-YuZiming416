@@ -8,6 +8,7 @@ router.get('/open', async (req, res) => {
             select wr.request_id, d.name as dog_name, wr.requested_time,
             wr.duration_minutes, wr.location, u.username as owner_username
             from WalkRequests wr
-            `)
+            join Dogs d on wr.dog_id = d.dog_id
+            join`)
     }
 })
