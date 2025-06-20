@@ -6,10 +6,14 @@ require('dotenv').config();
 const app = express();
 
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret',
+  secret: process.env.SESSION_SECRET || 'my-secret',
   resave: false,
   saveUninitialized: false
 }));
+
++app.get('/', (req, res) => {
+ res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
 // Middleware
 app.use(express.json());
