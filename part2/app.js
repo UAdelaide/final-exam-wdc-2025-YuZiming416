@@ -5,6 +5,12 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-secret',
+  resave: false,
+  saveUninitialized: false
+}));
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
