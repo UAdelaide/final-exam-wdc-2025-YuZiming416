@@ -13,6 +13,7 @@ router.get('/summary', async (req, res) => {
             select count(*)
             from WalkRequests wr
             join WalkApplications wa on wr.request_id = wa.request_id
-            where wr.status = ')`)
+            where wr.status = 'completed' and wa.walker_id = u.user_id
+            )`)
     }
 })
