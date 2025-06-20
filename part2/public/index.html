@@ -8,20 +8,36 @@
 </head>
 <body class="bg-light">
   <div id="app" class="container py-5" style="max-width: 400px;">
-    <h2 class="mb-4">Welcome to the Dog Walking Service!</h2>
+    <h2 class="mb-4 text-primary">Welcome to the Dog Walking Service!</h2>
 
-
-    <div class="card p-4">
+    <div class="card p-4 shadow-sm">
       <div v-if="error" class="alert alert-danger">{{ error }}</div>
+
       <div class="mb-3">
         <label class="form-label">Username or Email</label>
-        <input v-model="form.username" type="text" class="form-control" required>
+        <input
+          v-model="form.username"
+          type="text"
+          class="form-control"
+          placeholder="ownerJane or jane@example.com"
+          required>
       </div>
+
       <div class="mb-3">
         <label class="form-label">Password</label>
-        <input v-model="form.password" type="password" class="form-control" required>
+        <input
+          v-model="form.password"
+          type="password"
+          class="form-control"
+          placeholder="Enter your password"
+          required>
       </div>
-      <button type="button" @click="login" class="btn btn-primary w-100">Log In</button>
+
+      <button 
+        @click="login"
+        class="btn btn-primary w-100">
+        Log In
+      </button>
     </div>
   </div>
 
@@ -45,7 +61,6 @@
               error.value = result.error || 'Login failed';
               return;
             }
-
             if (result.user.role === 'owner') {
               window.location.href = '/owner-dashboard.html';
             } else {
