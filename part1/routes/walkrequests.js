@@ -2,4 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-router.get('/open', async)
+router.get('/open', async (req, res) => {
+    try {}
+})
