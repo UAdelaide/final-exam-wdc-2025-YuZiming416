@@ -65,7 +65,7 @@ router.get('/owner', async (req, res) => {
   const ownerId = req.session.user && req.session.user.id;
 
   if(!ownerId){
-    return res.status(401).json({ error: 'unauthentic owner, can not load '})
+    return res.status(401).json({ error: 'Can not get ownerId'})
   }
 
   try{
