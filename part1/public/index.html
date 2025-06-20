@@ -1,88 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Woof Woof 🤪</title>
+  <title>🚨 DOG CHAOS ZONE 🚨</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <style>
     body {
-      background-image: url('https://www.transparenttextures.com/patterns/noise.png'); /* 闪花眼 */
-      font-family: Papyrus, Comic Sans MS, cursive;
-      font-size: 36px;
+      margin: 0;
+      font-family: Papyrus, Comic Sans MS;
+      background-color: black;
       color: lime;
-      animation: spinbg 5s infinite linear;
+      animation: flash 0.3s infinite alternate;
+      overflow-x: hidden;
     }
 
-    @keyframes spinbg {
-      0% { background-color: magenta; }
-      50% { background-color: cyan; }
-      100% { background-color: magenta; }
+    @keyframes flash {
+      0% { background-color: red; color: yellow; }
+      50% { background-color: green; color: blue; }
+      100% { background-color: magenta; color: white; }
     }
 
     h1 {
-      text-shadow: 5px 5px 10px red;
-      transform: rotate(-10deg);
+      font-size: 64px;
+      text-align: center;
+      animation: spintext 2s linear infinite;
+    }
+
+    @keyframes spintext {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .dog-img {
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      filter: invert(1) grayscale(1);
+      display: block;
+      margin: 50px auto;
+      width: 300px;
+      height: 300px;
+      animation: rotate 2s linear infinite;
     }
 
-    #app {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 100px;
-      margin-top: 100vh;
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    button {
-      font-size: 32px;
-      padding: 40px;
-      background-color: #ff00ff;
-      color: yellow;
-      border: dashed 4px red;
-      cursor: crosshair;
+    .chaos-button {
+      position: absolute;
+      padding: 20px;
+      font-size: 20px;
+      background-color: hotpink;
+      color: black;
+      border: 3px dashed white;
+      animation: move 1s infinite alternate;
+    }
+
+    @keyframes move {
+      0% { left: 10%; top: 60%; }
+      25% { left: 70%; top: 10%; }
+      50% { left: 30%; top: 40%; }
+      75% { left: 80%; top: 70%; }
+      100% { left: 20%; top: 90%; }
     }
 
     .text-wall {
-      width: 90%;
-      background-color: rgba(255,255,255,0.3);
-      padding: 20px;
-      font-size: 14px;
-      line-height: 1.1;
-      overflow: scroll;
+      margin: 40px;
+      font-size: 18px;
+    }
+
+    footer {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      background-color: white;
+      color: black;
+      padding: 10px;
+      animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      0% { bottom: 0; }
+      100% { bottom: 400px; }
     }
   </style>
 </head>
 <body>
   <div id="app">
-    <h1>🧠 WELCOME TO THE DOG ZONE 🔥</h1>
+    <h1>DOG STORM 🐶🌪️</h1>
 
-    <!-- accessibility fail: no alt, distorted img, flashing bg -->
     <img :src="dogImage" class="dog-img" />
 
-    <!-- unclear button -->
-    <button @click="getDog">???</button>
+    <button class="chaos-button" @click="getDog">Spin Again!</button>
 
-    <!-- huge text wall: cognitive overload -->
     <div class="text-wall">
-      <p>
-        Here's your dog. Here's your daily cosmic canine. The chosen fluff of fate.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis,
-        libero eget volutpat ullamcorper, nulla orci dignissim odio, nec volutpat
-        quam ligula id lorem. Sed nec ligula non sapien feugiat vestibulum vel a dui.
-        Nulla et sapien rutrum, ultricies nulla non, bibendum arcu. 🌪️🔥🌈🐶🧱🐾🦴🎩👑🎉
-      </p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
+      <p>🐾 Welcome to the most intense dog image site ever created by mankind.</p>
     </div>
+
+    <footer>© CHAOS DOG FOOTER (Running wild 🐾)</footer>
   </div>
 
   <script>
     const { createApp } = Vue;
-
     createApp({
       data() {
         return {
