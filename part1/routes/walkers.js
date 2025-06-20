@@ -11,6 +11,7 @@ router.get('/summary', async (req, res) => {
             round(avg(r.rating), 1) as average_rating,
             (
             select count(*)
-            from WalkRequest)`)
+            from WalkRequests wr
+            join WalkApplications wa on wr.request)`)
     }
 })
