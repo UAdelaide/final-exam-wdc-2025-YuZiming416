@@ -7,6 +7,7 @@ router.get('/summary', async (req, res) => {
         const[rows] = await db.query(`
             select
             u.username as walker_username,
-            count(r.rating_id) as total`)
+            count(r.rating_id) as total_ratings,
+            round(avg(r.rating))`)
     }
 })
