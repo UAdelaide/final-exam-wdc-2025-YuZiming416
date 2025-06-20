@@ -83,7 +83,7 @@
         async function loadWalks() {
           try {
             const ownerId = 4;
-            const res = await fetch('/api/walks/owner/${ownerId}');
+            const res = await fetch('/api/walks/owner/4');
             walks.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
