@@ -9,6 +9,7 @@ router.get('/open', async (req, res) => {
             wr.duration_minutes, wr.location, u.username as owner_username
             from WalkRequests wr
             join Dogs d on wr.dog_id = d.dog_id
-            join`)
+            join Users u on d.owner_id = u.user_id
+            where we.`)
     }
 })
