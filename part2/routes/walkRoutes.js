@@ -62,7 +62,7 @@ router.post('/:id/apply', async (req, res) => {
 });
 
 router.get('/owner', async (req, res) => {
-  const ownerId = req.params.ownerId;
+  const ownerId = req.session.user;
 
   try{
     const [rows] = await db.query(`
