@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Express</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8" />
+  <title>Dog of the Day</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    body {
+      background-color: yellow; /* 🧠 cognitive overload */
+      font-family: Comic Sans MS;
+      font-size: 24px;
+      color: red;
+    }
+    .dog-img {
+      width: 100%;
+      height: auto;
+    }
+    button {
+      font-size: 20px;
+      background-color: purple;
+      color: white;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Express</h1>
-    <p>Welcome to Express</p>
+  <div id="app">
+    <h1>DOGGO SURPRISE 🐶🔥</h1>
+
+    <!-- accessibility fail: no alt text, random colors -->
+    <img :src="dogImage" class="dog-img" />
+
+    <!-- kinematic fail: button is far from text, and has unclear label -->
+    <button @click="getDog">Click me!!!</button>
+
+    <!-- cognitive fail: too much info for no reason -->
+    <p>Dog Name: Woofly the 3rd from the Lineage of Royal Chow Chows 🐕‍🦺</p>
+    <p>Breed: {{ breed }}</p>
+    <p>🌪️🌈🚀🌊🔥🐉🦴🌮🥩🍗🍖</p>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          dogImage: '',
+          breed: 'Unknown'
+        };
+      },
+      mounted() {
+        this.getDog();
+      },
+      methods: {
+        getDog() {
+          fetch('https://dog.ceo/api/breeds/image/random')
+            .then(res => res.json())
+            .then(data => {
+              this.dogImage = data.message;
+              const parts = data.message.split('/');
+              this.breed = parts[parts.indexOf('breeds') + 1] || 'Unknown';
+            });
+        }
+      }
+    }).mount('#app');
+  </script>
 </body>
 </html>
