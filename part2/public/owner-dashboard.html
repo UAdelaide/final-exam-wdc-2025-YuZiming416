@@ -97,14 +97,14 @@
         const message = ref('');
         const error = ref('');
 
-        +     async function loadDogs() {
+        async function loadDogs() {
        try {
-+         const res = await fetch('/api/dogs/owner');
-+         dogs.value = await res.json();
-+       } catch (err) {
-+         console.error('Failed to load dogs:', err);
-+       }
-+     }
+         const res = await fetch('/api/dogs/owner');
+         dogs.value = await res.json();
+       } catch (err) {
+         console.error('Failed to load dogs:', err);
+       }
+     }
 
 
         async function loadWalks() {
