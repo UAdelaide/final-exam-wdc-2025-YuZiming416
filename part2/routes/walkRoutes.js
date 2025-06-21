@@ -61,6 +61,7 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
+// get the o
 router.get('/owner', async (req, res) => {
   const ownerId = req.session.user && req.session.user.id;
 
@@ -100,8 +101,8 @@ router.get('/owner', async (req, res) => {
     res.json(rows);
   } catch (err) {
     console.error('Error fetching owner dogs:', err);
-    res.status(500).json({ error: 'Failed to fetch dogs'})
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
-})
+});
 
 module.exports = router;
