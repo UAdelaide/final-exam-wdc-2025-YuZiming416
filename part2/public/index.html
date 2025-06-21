@@ -72,7 +72,9 @@
 
         async function loadDogs(){
           const res = await fetch('/api/dogs');
-          const list = await
+          const list = await res.json();
+
+          // fetch a 
         }
 
         async function login() {
