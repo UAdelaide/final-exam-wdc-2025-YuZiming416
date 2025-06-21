@@ -70,6 +70,9 @@ router.post('/logout', (req, res) => {
 
     // clear the stored session cookie
     res.clearCookie('connect.sid');
+
+    // return login page
+    res.json()
   })
 })
 
