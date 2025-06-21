@@ -91,7 +91,9 @@ router.get('/owner', async (req, res) => {
     return res.status(401).json({ error: 'Can not get ownerId'});
   }
   try {
-    const [rows]
+    const [rows] = await db.query(
+      ``
+    )
   }
 })
 
