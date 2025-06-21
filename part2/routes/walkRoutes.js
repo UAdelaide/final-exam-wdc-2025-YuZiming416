@@ -97,7 +97,9 @@ router.get('/owner', async (req, res) => {
       where owner_id = ?`,
       [ownerId]
     );
-    
+    res.json(rows);
+  } catch (err) {
+    console
   }
 })
 
