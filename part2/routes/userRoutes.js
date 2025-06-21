@@ -69,7 +69,7 @@ router.post('/logout', (req, res) => {
     }
 
     // clear the stored session cookie
-    
+    res.clearCookie('connect.sid');
   })
 })
 
