@@ -84,6 +84,8 @@ router.get('/owner', async (req, res) => {
   }
 });
 
-router.get('/owner')
+router.get('/owner', async (req, res) => {
+  const
+})
 
 module.exports = router;
