@@ -64,7 +64,7 @@
 
 
   <script>
-    const { createApp, ref,  } = Vue;
+    const { createApp, ref, onMounted } = Vue;
 
     createApp({
       setup() {
@@ -98,7 +98,7 @@
       }
     }).mount('#app');
 
-        createApp({
+      createApp({
       setup() {
         const dogs = ref([]);
 
