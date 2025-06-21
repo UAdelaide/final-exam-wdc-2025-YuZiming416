@@ -92,7 +92,7 @@ router.get('/owner', async (req, res) => {
   }
   try {
     const [rows] = await db.query(
-      ``
+      `select dog_id, name`
     )
   }
 })
