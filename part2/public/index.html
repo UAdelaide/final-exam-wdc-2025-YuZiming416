@@ -104,7 +104,7 @@
 
       onMounted(async () => {
         try {
-          const res = await fetch('/api/dogs/');
+          const res = await fetch('/api/dogs');
           const list = await res.json();
           const withImages = await Promise.all(
             list.map(async d => {
