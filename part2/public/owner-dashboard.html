@@ -76,6 +76,7 @@
 
     createApp({
       setup() {
+        const dogs = ref([]);
         const form = ref({
           dog_id: '',
           requested_time: '',
@@ -95,7 +96,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const dogs = ref([]);
+
 
         async function loadWalks() {
           try {
