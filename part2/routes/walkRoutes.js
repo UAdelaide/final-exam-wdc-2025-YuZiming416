@@ -90,7 +90,9 @@ router.get('/owner', async (req, res) => {
   if(!ownerId){
     return res.status(401).json({ error: 'Can not get ownerId'});
   }
-  
+  try {
+    const [rows]
+  }
 })
 
 module.exports = router;
