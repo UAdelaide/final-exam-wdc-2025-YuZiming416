@@ -125,11 +125,10 @@
       setup() {
         const dogs = ref([]);
 
-        async function loadDogs(){
+      onMounted(async () => {
+        try {
           const res = await fetch('/api/dogs');
           const list = await res.json();
-
-          // fetch a random image for each dog
           const withImages = await Promise.all(
             list.map(async d => {
               const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -138,7 +137,13 @@
             })
           );
           dogs.value = withImages;
+        } catch (err) {
+          console.error('Load dogs failed:', err);
         }
+      });
+
+      return { dogs };
+      
 
   </script>
 </body>
