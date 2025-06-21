@@ -81,7 +81,9 @@
         async function logout() {
           try {
             await fetch('/api/users/logout', { method: 'POST' });
-          } catch
+          } catch (e) {
+            console.error()
+          }
         }
 
         const walks = ref([]);
