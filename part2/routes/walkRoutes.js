@@ -85,7 +85,12 @@ router.get('/owner', async (req, res) => {
 });
 
 router.get('/owner', async (req, res) => {
-  const ownerId = req.session.user 
+  const ownerId = req.session.user && req.session.user.id;
+
+  if(!ownerId){
+    return res.status(401).json({ error: 'Can not get ownerId'});
+  }
+  
 })
 
 module.exports = router;
