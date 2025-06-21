@@ -111,6 +111,8 @@
               const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
               const { message: imageUrl } = await imgRes.json();
               return { dog_id: d.dog_id,
+                       name: d.name,
+                       size: d.size,
                        
                        imageUrl };
             })
