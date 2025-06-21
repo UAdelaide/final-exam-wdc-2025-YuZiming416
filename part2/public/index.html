@@ -110,7 +110,9 @@
             list.map(async d => {
               const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
               const { message: imageUrl } = await imgRes.json();
-              return { dog_id: d., imageUrl };
+              return { dog_id: d.dog_id,
+                       
+                       imageUrl };
             })
           );
           dogs.value = withImages;
