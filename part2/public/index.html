@@ -64,28 +64,12 @@
 
 
   <script>
-    const { createApp, ref, onMounted } = Vue;
+    const { createApp, ref } = Vue;
 
     createApp({
       setup() {
         const form = ref({ username: '', password: '' });
         const error = ref('');
-        const dogs = ref([]);
-
-        async function loadDogs(){
-          const res = await fetch('/api/dogs');
-          const list = await res.json();
-
-          // fetch a random image for each dog
-          const withImages = await Promise.all(
-            list.map(async d => {
-              const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
-              const { message: imageUrl } = await imgRes.json();
-              return { ...d, imageUrl };
-            })
-          );
-          dogs.value = withImages;
-        }
 
         async function login() {
           try {
