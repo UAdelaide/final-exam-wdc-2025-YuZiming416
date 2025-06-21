@@ -89,7 +89,8 @@
               body: JSON.stringify({ walker_id: user })
             });
 
-            // use the fetched curren
+            // use the fetched currentUser.id instead of hard-coded user
+            
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
