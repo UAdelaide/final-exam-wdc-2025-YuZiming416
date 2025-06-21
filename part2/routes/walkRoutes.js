@@ -86,7 +86,7 @@ router.get('/owner', async (req, res) => {
 });
 
 // choose the dogs in the owner page
-router.get('/owner', async (req, res) => {
+router.get('/dogs/owner', async (req, res) => {
   const ownerId = req.session.user && req.session.user.id;
 
   if(!ownerId){
