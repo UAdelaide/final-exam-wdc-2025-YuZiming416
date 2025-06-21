@@ -63,7 +63,8 @@
             const result = await res.json();
             currentUser.value = result.user;  // { id, role }
           } catch (e) {
-            console.error('')
+            console.error(' Failed to fetch current user:', e);
+            
           }
 
         }
