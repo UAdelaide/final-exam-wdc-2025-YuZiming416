@@ -99,7 +99,7 @@ router.get('/owner', async (req, res) => {
     );
     res.json(rows);
   } catch (err) {
-    console
+    console.error('Error fetching owner dogs:', err);
   }
 })
 
