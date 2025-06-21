@@ -62,7 +62,6 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) => {
   // destroy the session
-  // eslint-disable-next-line consistent-return
   req.session.destroy((err) => {
     if (err) {
       console.error('Session destroy error:', err);
