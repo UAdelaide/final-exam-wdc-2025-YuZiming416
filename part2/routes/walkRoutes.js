@@ -61,7 +61,7 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-// get the o
+// let the owner to get the requests
 router.get('/owner', async (req, res) => {
   const ownerId = req.session.user && req.session.user.id;
 
