@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             `);
             res.json(rows);
     } catch (err) {
-        console.error
+        console.error('Database error fetching dogs:', err)
         res.status(500).json({ error: 'Database error', details: err.message });
     }
 });
