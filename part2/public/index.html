@@ -68,6 +68,7 @@
       setup() {
         const form = ref({ username: '', password: '' });
         const error = ref('');
+        const dogs = ref([]);
 
         async function login() {
           try {
