@@ -71,7 +71,8 @@
         const dogs = ref([]);
 
         async function loadDogs(){
-          const res = await 
+          const res = await fetch('/api/dogs');
+          const list = await
         }
 
         async function login() {
