@@ -78,7 +78,8 @@
           const withImages = wait Promise.all(
             list.map(async d => {
               const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
-              const { message: imageUrl }
+              const { message: imageUrl } = await imgRes.json();
+              return
             })
           )
         }
