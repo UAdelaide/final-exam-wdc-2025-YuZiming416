@@ -47,6 +47,15 @@
         const error = ref('');
         const user = 3;
 
+        async function logout() {
+          try {
+            await fetch('/api/users/logout', { method: 'POST' });
+          } catch (e) {
+            console.error('Logout error:', e);
+          }
+          window.location.href = 'index.html';
+        }
+
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
