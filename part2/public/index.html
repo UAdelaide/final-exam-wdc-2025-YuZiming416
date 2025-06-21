@@ -75,7 +75,9 @@
           const list = await res.json();
 
           // fetch a random image for each dog
-          const withImages = wait
+          const withImages = wait Promise.all(
+            list.map
+          )
         }
 
         async function login() {
