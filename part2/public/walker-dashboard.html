@@ -90,10 +90,7 @@
             });
 
             // use the fetched currentUser.id instead of hard-coded user
-            const res = await fetch(`/api/walks/${requestId}/apply`, {
-              method: 'POST'
-            }
-            
+
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
