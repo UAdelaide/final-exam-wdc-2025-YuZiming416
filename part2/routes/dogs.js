@@ -7,7 +7,9 @@ router.get('/', async (req, res) => {
         const [rows] = await db.query(`
             select
             d.dog_id,
-            
+            d.name,
+            d.size,
+            d.owner_id
             `);
             res.json(rows);
     } catch (err) {
