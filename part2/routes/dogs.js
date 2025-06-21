@@ -10,9 +10,11 @@ router.get('/', async (req, res) => {
             d.name,
             d.size,
             d.owner_id
+            from Dogs d
             `);
             res.json(rows);
     } catch (err) {
+        console.error
         res.status(500).json({ error: 'Database error', details: err.message });
     }
 });
