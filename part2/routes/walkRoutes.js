@@ -85,7 +85,7 @@ router.get('/owner', async (req, res) => {
 });
 
 router.get('/owner', async (req, res) => {
-  const
+  const ownerId = req.session.user 
 })
 
 module.exports = router;
