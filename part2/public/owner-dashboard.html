@@ -82,8 +82,9 @@
           try {
             await fetch('/api/users/logout', { method: 'POST' });
           } catch (e) {
-            console.error()
+            console.error('Logout error:', e);
           }
+          window.location.href
         }
 
         const walks = ref([]);
