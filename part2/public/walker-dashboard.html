@@ -88,6 +88,8 @@
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ walker_id: user })
             });
+
+            // use the fetched curren
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
